@@ -31,8 +31,12 @@
 - `CompassMath.swift`：角度归一化、最短转角和八方位计算。
 - `CompassView.swift`：自绘表盘、中文界面、位置与帮助页。
 - `Tests/main.swift`：跨越 0°、左右转向、多圈旋转和方位边界测试。
-- `scripts/make-icon.swift`：AppKit 图标绘制源；PNG 已包含在工程中，无需重新生成。
+- `scripts/make-icon.swift`：AppKit 图标绘制源；PNG 已包含在工程中。运行 `swift scripts/make-icon.swift NorthCompass/Assets.xcassets/AppIcon.appiconset` 可重新生成当前 v2 图标全部尺寸。
 
 Debug 构建支持 `--preview-heading` 参数，仅用于无磁力计的模拟器界面检查；真机正常启动不传此参数。模拟器不能验证真实磁场精度。
 
 API 参考：[Apple CLLocationManager](https://developer.apple.com/documentation/corelocation/cllocationmanager)、[Apple CLHeading](https://developer.apple.com/documentation/corelocation/clheading)。
+
+## 图标 v2
+
+深墨绿色渐变底、香槟金表圈与珊瑚红指针，使用原生 Core Graphics / AppKit 绘制。1024 像素原图在 `design/AppIcon-v2-1024.png`，第一版保留在 `design/icon-v1/`；当前图标为不含透明通道的 RGB PNG，由 iOS 应用系统圆角。Build 2 更新图标。
